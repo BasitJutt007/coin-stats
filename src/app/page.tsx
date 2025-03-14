@@ -31,10 +31,6 @@ interface CryptoData {
 
 export default function Home() {
   const [cryptoData, setCryptoData] = useState<{ [key: string]: CryptoData }>({});
-
-  console.log("CryptoData:::", cryptoData)
-  const [sockets, setSockets] = useState<{ [key: string]: WebSocket }>({});
-
   useEffect(() => {
     const socket = new WebSocket("ws://localhost:8000/ws");
 
