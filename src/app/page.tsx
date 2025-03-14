@@ -3,7 +3,12 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const coinLogos = {
+
+interface coinLogos {
+  [key: string]: string;
+}
+
+const coinLogos: coinLogos = {
   SOLUSDT: "/SOLUSDT.png",
   BTCUSDT: "/BTCUSDT.png",
   ETHUSDT: "/ETHUSDT.png",
@@ -98,7 +103,7 @@ export default function Home() {
                   <td className="p-4">
                     {/* Placeholder for icon */}
                     <div className="w-10 h-10 bg-gray-600 rounded-full mx-auto">
-                      <Image src={coinLogos[symbol] as string} alt={symbol} width={40} height={40} />
+                      <Image src={coinLogos[symbol]} alt={symbol} width={40} height={40} />
                     </div>
                   </td>
                   <td className="p-4 font-bold">{symbol}</td>
